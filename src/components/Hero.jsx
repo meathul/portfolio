@@ -1,7 +1,8 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
+import ImageWithFallback from './ImageWithFallback';
 
-export default function Hero() {
+export default function Hero({ onImageClick }) {
   const scrollToPortfolio = () => {
     document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -20,9 +21,17 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 w-full relative z-10 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Image Placeholder - Larger and with animation */}
-          <div className="relative group">
+          <div 
+            className="relative group cursor-pointer" 
+            onClick={() => onImageClick('/images/hero.jpg', 'Anjali Shameer - Hero Portrait')}
+          >
             <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-400 rounded-sm opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500" />
-            <div className="image-placeholder w-full aspect-[3/4] bg-gradient-to-br from-gray-300 via-gray-350 to-gray-400 rounded-sm shadow-2xl transform hover:scale-105 transition-transform duration-500 animate-slideUp" />
+            <ImageWithFallback
+              src="/images/hero.jpg"
+              alt="Anjali Shameer Hero Portrait"
+              className="shadow-2xl transform hover:scale-105 transition-transform duration-500 animate-slideUp"
+              aspect="aspect-[3/4]"
+            />
             <div className="absolute inset-0 rounded-sm border border-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
@@ -40,7 +49,7 @@ export default function Hero() {
             {/* Subtitle */}
             <div className="space-y-4 animate-slideUp-delayed-2">
               <p className="text-lg md:text-2xl font-light tracking-widest text-gray-700 uppercase">
-                Fashion · Editorial · Commercial
+                Fashion · Ethnic · Commercial
               </p>
               <p className="text-sm md:text-base font-light leading-relaxed text-gray-600 max-w-lg">
                 Emerging model from Kerala. 1st Runner-Up Miss Kerala 2025 & Miss Fitness Title Winner. 

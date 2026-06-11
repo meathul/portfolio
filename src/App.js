@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
@@ -9,9 +9,20 @@ import Work from './components/Work';
 import Video from './components/Video';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Lightbox from './components/Lightbox';
 import './index.css';
 
 function App() {
+  const [lightbox, setLightbox] = useState({ isOpen: false, src: '', alt: '' });
+
+  const openLightbox = (src, alt) => {
+    setLightbox({ isOpen: true, src, alt });
+  };
+
+  const closeLightbox = () => {
+    setLightbox({ isOpen: false, src: '', alt: '' });
+  };
+
   useEffect(() => {
     // Add scroll animations
     const observerOptions = {
@@ -45,15 +56,22 @@ function App() {
   return (
     <div className="w-full overflow-x-hidden bg-white text-black">
       <Navbar />
-      <Hero />
-      <Portfolio />
-      <Digitals />
-      <About />
+      <Hero onImageClick={openLightbox} />
+      <Portfolio onImageClick={openLightbox} />
+      <Digitals onImageClick={openLightbox} />
+      <About onImageClick={openLightbox} />
       <Stats />
       <Work />
       <Video />
       <Contact />
       <Footer />
+      
+      <Lightbox
+        isOpen={lightbox.isOpen}
+        imageSrc={lightbox.src}
+        imageAlt={lightbox.alt}
+        onClose={closeLightbox}
+      />
     </div>
   );
 }

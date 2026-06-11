@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
+import ImageWithFallback from './ImageWithFallback';
 
 const portfolioItems = [
-  { id: 1, category: 'Editorial', aspect: 'portrait' },
-  { id: 2, category: 'Commercial', aspect: 'portrait' },
-  { id: 3, category: 'Editorial', aspect: 'square' },
-  { id: 4, category: 'Fitness', aspect: 'portrait' },
-  { id: 5, category: 'Commercial', aspect: 'square' },
-  { id: 6, category: 'Editorial', aspect: 'portrait' },
-  { id: 7, category: 'Fitness', aspect: 'square' },
-  { id: 8, category: 'Commercial', aspect: 'portrait' },
+  { id: 1, category: 'Ethnic', aspect: 'portrait', image: '/images/portfolio-1.jpg' },
+  { id: 2, category: 'Commercial', aspect: 'portrait', image: '/images/portfolio-2.jpg' },
+  { id: 3, category: 'Ethnic', aspect: 'portrait', image: '/images/portfolio-3.jpg' },
+  { id: 4, category: 'Fashion', aspect: 'portrait', image: '/images/portfolio-4.jpg' },
+  { id: 5, category: 'Commercial', aspect: 'portrait', image: '/images/portfolio-5.jpg' },
+  { id: 6, category: 'Ethnic', aspect: 'portrait', image: '/images/portfolio-6.jpg' },
+  { id: 7, category: 'Fashion', aspect: 'portrait', image: '/images/portfolio-7.jpg' },
+  { id: 8, category: 'Commercial', aspect: 'portrait', image: '/images/portfolio-8.jpg' },
 ];
 
-export default function Portfolio() {
+export default function Portfolio({ onImageClick }) {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const categories = ['All', 'Editorial', 'Commercial', 'Fitness'];
+  const categories = ['All', 'Fashion', 'Ethnic', 'Commercial'];
 
   const filteredItems =
     activeFilter === 'All'
@@ -28,7 +29,7 @@ export default function Portfolio() {
         <div className="mb-16">
           <h2 className="section-heading">PORTFOLIO</h2>
           <p className="text-sm font-light tracking-wide text-gray-600">
-            Selection of recent work across fashion, commercial and editorial projects
+            Selection of recent work across fashion, ethnic and commercial projects
           </p>
         </div>
 
@@ -50,18 +51,20 @@ export default function Portfolio() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className={`group relative image-placeholder overflow-hidden cursor-pointer bg-gradient-to-br from-gray-300 to-gray-400 transition-transform duration-300 ${
-                item.aspect === 'portrait' ? 'aspect-[3/4]' : 'aspect-square'
-              }`}
+              className="group relative overflow-hidden cursor-pointer rounded-sm"
+              onClick={() => onImageClick(item.image, `${item.category} - Portfolio Shot #${item.id}`)}
             >
-              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="transform group-hover:scale-105 transition-transform duration-300 w-full h-full bg-gradient-to-br from-gray-300 to-gray-400" />
-              </div>
+              <ImageWithFallback
+                src={item.image}
+                alt={`${item.category} Portfolio Shot ${item.id}`}
+                aspect={item.aspect === 'portrait' ? 'aspect-[3/4]' : 'aspect-square'}
+                className="transform group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none" />
             </div>
           ))}
         </div>

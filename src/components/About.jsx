@@ -1,6 +1,7 @@
 import React from 'react';
+import ImageWithFallback from './ImageWithFallback';
 
-export default function About() {
+export default function About({ onImageClick }) {
   return (
     <section id="about" className="w-full py-24 bg-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +13,17 @@ export default function About() {
         {/* Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Image */}
-          <div className="image-placeholder w-full aspect-[3/4] bg-gradient-to-br from-gray-300 to-gray-400 rounded-sm" />
+          <div 
+            className="cursor-pointer"
+            onClick={() => onImageClick('/images/about.jpg', 'Anjali Shameer - About Profile')}
+          >
+            <ImageWithFallback
+              src="/images/about.jpg"
+              alt="Anjali Shameer About Profile"
+              className="shadow-lg hover:scale-[1.02] transition-transform duration-500"
+              aspect="aspect-[3/4]"
+            />
+          </div>
 
           {/* Text */}
           <div className="space-y-8">
