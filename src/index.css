@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #ffffff !important;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+#root {
+  background-color: #ffffff !important;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom classes for specific behaviors */
+.btn-primary {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: 1px solid black;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  transition: all 300ms;
+}
+
+.btn-primary:hover {
+  background-color: black;
+  color: white;
+}
+
+.navbar-link {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.navbar-link:hover {
+  opacity: 0.7;
+}
+
+.section-heading {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+.image-placeholder {
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #d1d5db;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Hero Section Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes floatDelayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-slideUp-delayed-1 {
+  animation: slideUp 0.8s ease-out 0.1s both;
+}
+
+.animate-slideUp-delayed-2 {
+  animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+.animate-slideUp-delayed-3 {
+  animation: slideUp 0.8s ease-out 0.3s both;
+}
+
+.animate-slideUp-delayed-4 {
+  animation: slideUp 0.8s ease-out 0.4s both;
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatDelayed 10s ease-in-out infinite;
+}
+
+/* Dark Mode Styles - Let Tailwind handle it with dark: prefix */
+
