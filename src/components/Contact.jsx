@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Share2 } from 'lucide-react';
+import { Share2 } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -20,6 +20,13 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    const subject = `Inquiry from ${formData.name}`;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+    
+    // Open default mail client with prefilled details
+    window.location.href = `mailto:anjaliearatt@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     setSubmitted(true);
     setTimeout(() => {
       setFormData({ name: '', email: '', message: '' });
@@ -28,12 +35,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full py-24 bg-white transition-colors duration-300">
+    <section id="contact" className="w-full py-24 bg-transparent transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16">
           <h2 className="section-heading">CONTACT</h2>
-          <p className="text-sm font-light tracking-wide text-gray-600">
+          <p className="text-sm font-light tracking-wide text-gray-400">
             For booking inquiries, press requests, and collaborations
           </p>
         </div>
@@ -51,34 +58,10 @@ export default function Contact() {
                     EMAIL
                   </p>
                   <a
-                    href="mailto:aria@example.com"
-                    className="text-sm font-light tracking-wide text-black hover:opacity-70 transition-opacity"
+                    href="mailto:anjaliearatt@gmail.com"
+                    className="text-sm font-light tracking-wide text-white hover:opacity-70 transition-opacity"
                   >
-                    aria@example.com
-                  </a>
-                </div>
-
-                <div>
-                  <p className="text-xs font-light tracking-widest text-gray-500 mb-2">
-                    MANAGEMENT
-                  </p>
-                  <p className="text-sm font-light tracking-wide text-black">
-                    Elite Model Management
-                  </p>
-                  <p className="text-sm font-light tracking-wide text-black">
-                    New York, NY
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs font-light tracking-widest text-gray-500 mb-2">
-                    PHONE
-                  </p>
-                  <a
-                    href="tel:+1234567890"
-                    className="text-sm font-light tracking-wide text-black hover:opacity-70 transition-opacity"
-                  >
-                    +1 (555) 123-4567
+                    anjaliearatt@gmail.com
                   </a>
                 </div>
               </div>
@@ -91,11 +74,13 @@ export default function Contact() {
               </h3>
               <div className="flex space-x-6">
                 <a
-                  href="#"
-                  className="text-sm font-light tracking-wide text-black hover:opacity-70 transition-opacity flex items-center space-x-2"
+                  href="https://www.instagram.com/anjalishameer/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-light tracking-wide text-white hover:opacity-70 transition-opacity flex items-center space-x-2"
                 >
                   <Share2 size={18} />
-                  <span>@ariachen</span>
+                  <span>@anjalishameer</span>
                 </a>
               </div>
             </div>
@@ -114,7 +99,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-white border border-gray-300 px-4 py-3 text-sm font-light text-black focus:outline-none focus:border-black:border-white transition-colors placeholder-gray-400"
+                  className="w-full bg-black/30 border border-white/20 px-4 py-3 text-sm font-light text-white focus:outline-none focus:border-white transition-colors placeholder-gray-500"
                   placeholder="Your name"
                 />
               </div>
@@ -129,7 +114,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-white border border-gray-300 px-4 py-3 text-sm font-light text-black focus:outline-none focus:border-black:border-white transition-colors placeholder-gray-400"
+                  className="w-full bg-black/30 border border-white/20 px-4 py-3 text-sm font-light text-white focus:outline-none focus:border-white transition-colors placeholder-gray-500"
                   placeholder="your@email.com"
                 />
               </div>
@@ -144,7 +129,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full bg-white border border-gray-300 px-4 py-3 text-sm font-light text-black focus:outline-none focus:border-black:border-white transition-colors resize-none placeholder-gray-400"
+                  className="w-full bg-black/30 border border-white/20 px-4 py-3 text-sm font-light text-white focus:outline-none focus:border-white transition-colors resize-none placeholder-gray-500"
                   placeholder="Your message"
                 />
               </div>

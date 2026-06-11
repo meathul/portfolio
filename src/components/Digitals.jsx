@@ -9,12 +9,12 @@ const digitals = [
 
 export default function Digitals({ onImageClick }) {
   return (
-    <section id="digitals" className="w-full py-24 bg-white transition-colors duration-300">
+    <section id="digitals" className="w-full py-24 bg-transparent transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16">
           <h2 className="section-heading">DIGITALS</h2>
-          <p className="text-sm font-light tracking-wide text-gray-600">
+          <p className="text-sm font-light tracking-wide text-gray-400">
             Professional digital measurements and reference shots
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function Digitals({ onImageClick }) {
                 />
                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none" />
               </div>
-              <p className="text-xs font-light tracking-widest text-center text-gray-600">
+              <p className="text-xs font-light tracking-widest text-center text-gray-400">
                 {item.label}
               </p>
             </div>

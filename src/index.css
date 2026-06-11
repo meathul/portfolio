@@ -11,17 +11,17 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #ffffff !important;
+  background-color: #0a0a0a;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #ffffff !important;
-  color: #000000 !important;
+  background-color: #0a0a0a;
+  color: #ffffff !important;
 }
 
 #root {
-  background-color: #ffffff !important;
+  background-color: #0a0a0a;
   width: 100%;
   min-height: 100vh;
 }
@@ -32,7 +32,7 @@ body {
   padding-right: 32px;
   padding-top: 12px;
   padding-bottom: 12px;
-  border: 1px solid black;
+  border: 1px solid white;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.05em;
@@ -40,29 +40,38 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .navbar-link {
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.05em;
-  opacity: 1;
+  color: #ffffff;
+  opacity: 0.8;
   transition: opacity 300ms;
 }
 
 .navbar-link:hover {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .section-heading {
-  font-size: 48px;
+  font-size: 32px;
   font-family: 'Playfair Display', serif;
   font-weight: 300;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 48px;
+    margin-bottom: 32px;
+  }
 }
 
 .image-placeholder {

@@ -12,10 +12,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-xl font-display font-light tracking-wider mb-4">
-              ARIA
+              ANJALI SHAMEER
             </h3>
             <p className="text-sm font-light text-gray-400">
-              Professional fashion model based in New York
+              Professional fashion model and pageant titleholder
             </p>
           </div>
 
@@ -28,7 +28,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#home"
-                  className="text-sm font-light text-gray-400 hover:text-white:text-white transition-colors"
+                  className="text-sm font-light text-gray-400 hover:text-white transition-colors"
                 >
                   Home
                 </a>
@@ -36,7 +36,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#portfolio"
-                  className="text-sm font-light text-gray-400 hover:text-white:text-white transition-colors"
+                  className="text-sm font-light text-gray-400 hover:text-white transition-colors"
                 >
                   Portfolio
                 </a>
@@ -44,7 +44,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#contact"
-                  className="text-sm font-light text-gray-400 hover:text-white:text-white transition-colors"
+                  className="text-sm font-light text-gray-400 hover:text-white transition-colors"
                 >
                   Contact
                 </a>
@@ -59,15 +59,17 @@ export default function Footer() {
             </h4>
             <div className="flex space-x-4">
               <a
-                href="#"
-                className="text-gray-400 hover:text-white:text-white transition-colors"
+                href="https://www.instagram.com/anjalishameer/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
                 title="Instagram"
               >
                 <Share2 size={18} />
               </a>
               <a
-                href="#"
-                className="text-gray-400 hover:text-white:text-white transition-colors"
+                href="mailto:anjaliearatt@gmail.com"
+                className="text-gray-400 hover:text-white transition-colors"
                 title="Email"
               >
                 <Mail size={18} />
@@ -80,9 +82,6 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center text-xs font-light text-gray-400">
           <p>
             © {currentYear} Anjali Shameer. All rights reserved.
-          </p>
-          <p>
-            Represented by Elite Model Management
           </p>
         </div>
       </div>

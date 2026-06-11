@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Play, Pause } from 'lucide-react';
 
-function VideoPlayer({ src, title, placeholderLabel }) {
+function VideoPlayer({ src, title }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
   const videoRef = useRef(null);
@@ -22,14 +22,11 @@ function VideoPlayer({ src, title, placeholderLabel }) {
   };
 
   return (
-    <div className="w-full max-w-[320px] aspect-[9/16] rounded-md overflow-hidden shadow-xl bg-gradient-to-br from-gray-900 to-black relative group border border-gray-100">
+    <div className="w-full max-w-[320px] aspect-[9/16] rounded-md overflow-hidden shadow-xl bg-gradient-to-br from-gray-900 to-black relative group border border-white/10">
       {hasError ? (
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400">
-          <span className="text-[11px] font-light tracking-widest text-black uppercase opacity-60">
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-neutral-900 via-neutral-950 to-black">
+          <span className="text-[11px] font-light tracking-widest text-white uppercase opacity-75">
             {title}
-          </span>
-          <span className="text-[9px] font-extralight tracking-wider text-black opacity-30 mt-2">
-            ({placeholderLabel})
           </span>
         </div>
       ) : (
@@ -75,14 +72,11 @@ function VideoPlayer({ src, title, placeholderLabel }) {
 
 export default function Video() {
   return (
-    <section id="video" className="w-full py-24 bg-white transition-colors duration-300">
+    <section id="video" className="w-full py-24 bg-transparent transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16">
           <h2 className="section-heading">REELS</h2>
-          <p className="text-sm font-light tracking-wide text-gray-600">
-            Featured video highlights and pageant clips
-          </p>
         </div>
 
         {/* Video Grid - Updated to 3 columns */}
@@ -90,26 +84,18 @@ export default function Video() {
           <VideoPlayer 
             src="/images/reel-1.mp4" 
             title="REEL 01" 
-            placeholderLabel="Place reel-1.mp4 in public/images/" 
           />
           <VideoPlayer 
             src="/images/reel-2.mp4" 
             title="REEL 02" 
-            placeholderLabel="Place reel-2.mp4 in public/images/" 
           />
           <VideoPlayer 
             src="/images/reel-3.mp4" 
             title="REEL 03" 
-            placeholderLabel="Place reel-3.mp4 in public/images/" 
           />
         </div>
 
-        {/* Video Info */}
-        <div className="mt-16 text-center">
-          <p className="text-sm font-light text-gray-600 max-w-xl mx-auto">
-            Click to play or pause the reels. Add your downloaded MP4 video files to the public images folder to load them.
-          </p>
-        </div>
+
       </div>
     </section>
   );

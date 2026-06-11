@@ -23,26 +23,26 @@ export default function Portfolio({ onImageClick }) {
       : portfolioItems.filter((item) => item.category === activeFilter);
 
   return (
-    <section id="portfolio" className="w-full py-24 bg-white transition-colors duration-300">
+    <section id="portfolio" className="w-full py-24 bg-transparent transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16">
           <h2 className="section-heading">PORTFOLIO</h2>
-          <p className="text-sm font-light tracking-wide text-gray-600">
+          <p className="text-sm font-light tracking-wide text-gray-400">
             Selection of recent work across fashion, ethnic and commercial projects
           </p>
         </div>
 
         {/* Filter */}
-        <div className="flex space-x-6 mb-12 border-b border-gray-200 pb-6">
+        <div className="flex space-x-6 mb-12 border-b border-white/10 pb-6">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveFilter(cat)}
               className={`text-sm font-light tracking-wider pb-2 border-b-2 transition-colors duration-300 ${
                 activeFilter === cat
-                  ? 'border-black text-black'
-                  : 'border-transparent text-gray-400 hover:text-gray-600:text-gray-400'
+                  ? 'border-white text-white font-medium'
+                  : 'border-transparent text-gray-500 hover:text-white'
               }`}
             >
               {cat}

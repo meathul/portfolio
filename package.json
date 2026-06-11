@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "lucide-react": "^1.8.0",
+    "ogl": "^1.0.11",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-scripts": "5.0.1"

@@ -10,6 +10,7 @@ import Video from './components/Video';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Lightbox from './components/Lightbox';
+import DarkVeil from './components/DarkVeil';
 import './index.css';
 
 function App() {
@@ -54,24 +55,39 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full overflow-x-hidden bg-white text-black">
-      <Navbar />
-      <Hero onImageClick={openLightbox} />
-      <Portfolio onImageClick={openLightbox} />
-      <Digitals onImageClick={openLightbox} />
-      <About onImageClick={openLightbox} />
-      <Stats />
-      <Work />
-      <Video />
-      <Contact />
-      <Footer />
-      
-      <Lightbox
-        isOpen={lightbox.isOpen}
-        imageSrc={lightbox.src}
-        imageAlt={lightbox.alt}
-        onClose={closeLightbox}
-      />
+    <div className="w-full overflow-x-hidden bg-[#0a0a0a] text-white relative">
+      {/* Global DarkVeil Background */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden w-full h-full">
+        <DarkVeil
+          hueShift={-95}
+          noiseIntensity={0}
+          scanlineIntensity={0}
+          speed={0.5}
+          scanlineFrequency={0}
+          warpAmount={0}
+          resolutionScale={1}
+        />
+      </div>
+
+      <div className="relative z-10">
+        <Navbar />
+        <Hero onImageClick={openLightbox} />
+        <Portfolio onImageClick={openLightbox} />
+        <Digitals onImageClick={openLightbox} />
+        <About onImageClick={openLightbox} />
+        <Stats />
+        <Work />
+        <Video />
+        <Contact />
+        <Footer />
+        
+        <Lightbox
+          isOpen={lightbox.isOpen}
+          imageSrc={lightbox.src}
+          imageAlt={lightbox.alt}
+          onClose={closeLightbox}
+        />
+      </div>
     </div>
   );
 }

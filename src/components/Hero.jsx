@@ -10,7 +10,7 @@ export default function Hero({ onImageClick }) {
   return (
     <section
       id="home"
-      className="w-full min-h-screen flex items-center justify-center relative pt-20 pb-20 bg-white overflow-hidden transition-colors duration-300"
+      className="w-full min-h-screen flex items-center justify-center relative pt-20 pb-20 bg-transparent overflow-hidden transition-colors duration-300"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -32,28 +32,28 @@ export default function Hero({ onImageClick }) {
               className="shadow-2xl transform hover:scale-105 transition-transform duration-500 animate-slideUp"
               aspect="aspect-[3/4]"
             />
-            <div className="absolute inset-0 rounded-sm border border-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 rounded-sm border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
           {/* Text Content - Much Larger */}
           <div className="space-y-10 lg:space-y-12">
             {/* Main Heading */}
             <div className="space-y-6 animate-slideUp-delayed-1">
-              <h1 className="text-7xl md:text-8xl lg:text-9xl font-display font-light tracking-tighter leading-none">
-                <span className="block text-black">ANJALI</span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600">SHAMEER</span>
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-light tracking-tighter leading-none">
+                <span className="block text-white">ANJALI</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-400">SHAMEER</span>
               </h1>
-              <div className="w-20 h-1 bg-black" />
+              <div className="w-20 h-1 bg-white" />
             </div>
 
             {/* Subtitle */}
             <div className="space-y-4 animate-slideUp-delayed-2">
-              <p className="text-lg md:text-2xl font-light tracking-widest text-gray-700 uppercase">
+              <p className="text-lg md:text-2xl font-light tracking-widest text-gray-300 uppercase">
                 Fashion · Ethnic · Commercial
               </p>
-              <p className="text-sm md:text-base font-light leading-relaxed text-gray-600 max-w-lg">
-                Emerging model from Kerala. 1st Runner-Up Miss Kerala 2025 & Miss Fitness Title Winner. 
-                Top 3 Finalist with exceptional stage presence and professional excellence.
+              <p className="text-sm md:text-base font-light leading-relaxed text-gray-400 max-w-lg">
+                A 21-year-old model, classical dancer, and Miss Kerala 2025 1st Runner-Up. 
+                Passionate about performance, visual storytelling, and on-camera hosting across Bahrain and Kerala.
               </p>
             </div>
 
@@ -61,27 +61,27 @@ export default function Hero({ onImageClick }) {
             <div className="flex flex-col sm:flex-row gap-6 pt-4 animate-slideUp-delayed-3">
               <button
                 onClick={scrollToPortfolio}
-                className="btn-primary inline-flex items-center justify-center px-8 py-4 text-sm font-light tracking-widest bg-black text-white hover:bg-gray-800:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+                className="btn-primary inline-flex items-center justify-center px-8 py-4 text-sm font-light tracking-widest bg-white text-black hover:bg-transparent hover:text-white hover:border-white transition-all duration-300 transform hover:scale-105"
               >
                 VIEW PORTFOLIO
               </button>
-              <button className="px-8 py-4 text-sm font-light tracking-widest border border-gray-400 text-gray-700 hover:bg-gray-50:bg-gray-900 transition-all duration-300 transform hover:scale-105">
+              <button className="px-8 py-4 text-sm font-light tracking-widest border border-white/30 text-white hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
                 LEARN MORE
               </button>
             </div>
 
             {/* Professional Achievements Section */}
-            <div className="pt-12 border-t border-gray-200 animate-slideUp-delayed-4">
-              <div className="grid grid-cols-3 gap-6">
+            <div className="pt-12 border-t border-white/10 animate-slideUp-delayed-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Achievement 1 */}
                 <div className="group">
                   <div className="relative h-full">
-                    <div className="absolute -inset-1 bg-black opacity-0 group-hover:opacity-3 transition-opacity duration-500 blur-lg" />
-                    <div className="relative bg-white border border-gray-300 p-8 h-full flex flex-col justify-between group-hover:border-black:border-white transition-all duration-300">
+                    <div className="absolute -inset-1 bg-white opacity-0 group-hover:opacity-5 transition-opacity duration-500 blur-lg" />
+                    <div className="relative bg-white/5 border border-white/10 backdrop-blur-md p-6 md:p-8 h-full flex flex-col justify-between group-hover:border-white transition-all duration-300">
                       <div>
-                        <div className="w-12 h-0.5 bg-black mb-6" />
-                        <h3 className="text-2xl font-display font-light text-black leading-tight mb-3">1st Runner-Up</h3>
-                        <p className="text-sm text-gray-600 font-light leading-relaxed">Miss Kerala 2025 Pageant</p>
+                        <div className="w-12 h-0.5 bg-white mb-6" />
+                        <h3 className="text-2xl font-display font-light text-white leading-tight mb-3">1st Runner-Up</h3>
+                        <p className="text-sm text-gray-400 font-light leading-relaxed">Miss Kerala 2025 Pageant</p>
                       </div>
                     </div>
                   </div>
@@ -90,12 +90,12 @@ export default function Hero({ onImageClick }) {
                 {/* Achievement 2 */}
                 <div className="group">
                   <div className="relative h-full">
-                    <div className="absolute -inset-1 bg-black opacity-0 group-hover:opacity-3 transition-opacity duration-500 blur-lg" />
-                    <div className="relative bg-white border border-gray-300 p-8 h-full flex flex-col justify-between group-hover:border-black:border-white transition-all duration-300">
+                    <div className="absolute -inset-1 bg-white opacity-0 group-hover:opacity-5 transition-opacity duration-500 blur-lg" />
+                    <div className="relative bg-white/5 border border-white/10 backdrop-blur-md p-6 md:p-8 h-full flex flex-col justify-between group-hover:border-white transition-all duration-300">
                       <div>
-                        <div className="w-12 h-0.5 bg-black mb-6" />
-                        <h3 className="text-2xl font-display font-light text-black leading-tight mb-3">Miss Fitness Award</h3>
-                        <p className="text-sm text-gray-600 font-light leading-relaxed">Miss Kerala Pageant 2025</p>
+                        <div className="w-12 h-0.5 bg-white mb-6" />
+                        <h3 className="text-2xl font-display font-light text-white leading-tight mb-3">Miss Fitness Award</h3>
+                        <p className="text-sm text-gray-400 font-light leading-relaxed">Miss Kerala Pageant 2025</p>
                       </div>
                     </div>
                   </div>
@@ -104,12 +104,12 @@ export default function Hero({ onImageClick }) {
                 {/* Achievement 3 */}
                 <div className="group">
                   <div className="relative h-full">
-                    <div className="absolute -inset-1 bg-black opacity-0 group-hover:opacity-3 transition-opacity duration-500 blur-lg" />
-                    <div className="relative bg-white border border-gray-300 p-8 h-full flex flex-col justify-between group-hover:border-black:border-white transition-all duration-300">
+                    <div className="absolute -inset-1 bg-white opacity-0 group-hover:opacity-5 transition-opacity duration-500 blur-lg" />
+                    <div className="relative bg-white/5 border border-white/10 backdrop-blur-md p-6 md:p-8 h-full flex flex-col justify-between group-hover:border-white transition-all duration-300">
                       <div>
-                        <div className="w-12 h-0.5 bg-black mb-6" />
-                        <h3 className="text-2xl font-display font-light text-black leading-tight mb-3">Brand Shoots</h3>
-                        <p className="text-sm text-gray-600 font-light leading-relaxed">Done for Several Top Brands</p>
+                        <div className="w-12 h-0.5 bg-white mb-6" />
+                        <h3 className="text-2xl font-display font-light text-white leading-tight mb-3">Brand Shoots</h3>
+                        <p className="text-sm text-gray-400 font-light leading-relaxed">Done for Several Top Brands</p>
                       </div>
                     </div>
                   </div>

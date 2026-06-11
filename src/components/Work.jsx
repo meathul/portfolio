@@ -3,58 +3,62 @@ import React from 'react';
 const works = [
   {
     id: 1,
-    brand: 'LUXURY FASHION HOUSE',
-    project: 'Spring/Summer Campaign 2025',
-    type: 'Campaign',
-    description: 'Lead model for international advertising campaign',
+    brand: 'Swayamvara',
+    project: 'Hoarding Campaign',
+    type: 'Fashion & Ethnic Wear',
+    description: 'Featured in both solo and group photoshoots, showcasing versatile fashion and ethnic looks for outdoor advertising campaigns.',
   },
   {
     id: 2,
-    brand: 'VOGUE MAGAZINE',
-    project: 'Editorial Feature',
-    type: 'Editorial',
-    description: 'Cover and 12-page editorial spread',
+    brand: 'Vishnu Inn',
+    project: 'Promotional Advertisement',
+    type: 'Ethnic Lifestyle Promotion',
+    description: 'Created and featured in a promotional video highlighting the brand’s hospitality and ambience.',
   },
   {
     id: 3,
-    brand: 'PARIS FASHION WEEK',
-    project: 'Runway Show',
-    type: 'Runway',
-    description: 'Opened show for renowned designer',
+    brand: 'Argan Women’s Clothing and MakeupbyMahi',
+    project: 'Brand Promotion',
+    type: 'Ethnic & Bridal Fashion',
+    description: 'Modeled a customized Pakistani bridal look to promote the brand’s ethnic clothing collection.',
   },
   {
     id: 4,
-    brand: 'PREMIUM BEAUTY BRAND',
-    project: 'Global Campaign',
-    type: 'Campaign',
-    description: 'Digital and print advertising campaign',
+    brand: 'Makeup with Shifa and HairbyRiz',
+    project: 'Glam Makeover Collaboration',
+    type: 'Soft Glam Beauty',
+    description: 'Featured in an elegant soft glam makeover shoot showcasing professional makeup artistry.',
   },
   {
     id: 5,
-    brand: 'HARPER\'S BAZAAR',
-    project: 'Editorial Shoot',
-    type: 'Editorial',
-    description: 'Fashion editorial and interview feature',
+    brand: 'Khulood',
+    project: 'Arabian Glam Makeover',
+    type: 'Bold Beauty & Fashion',
+    description: 'Modeled a statement Arabian glam look featuring premium Arabian beauty products and styling.',
   },
   {
     id: 6,
-    brand: 'LUXURY RETAIL',
-    project: 'In-Store Campaign',
-    type: 'Campaign',
-    description: 'Window displays and promotional materials',
+    brand: 'Zezora Unisex Salon',
+    project: 'Promotional Collaboration',
+    type: 'Transformation & Beauty',
+    description: 'Participated in a makeover and transformation campaign to promote the salon’s services.',
+  },
+  {
+    id: 7,
+    brand: 'Ranganarayan & Sachuzz Makeover',
+    project: 'Bridal Makeover & Photoshoot',
+    type: 'South Indian Ethnic Bridal',
+    description: 'Featured as a South Indian bride in a professional makeover and photoshoot campaign.',
   },
 ];
 
 export default function Work() {
   return (
-    <section id="work" className="w-full py-24 bg-white transition-colors duration-300">
+    <section id="work" className="w-full py-24 bg-transparent transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16">
           <h2 className="section-heading">WORK & EXPERIENCE</h2>
-          <p className="text-sm font-light tracking-wide text-gray-600">
-            Recent campaigns, editorial features, and runway appearances
-          </p>
         </div>
 
         {/* Work List */}
@@ -62,7 +66,7 @@ export default function Work() {
           {works.map((work) => (
             <div
               key={work.id}
-              className="group border-b border-gray-200 pb-8 hover:pb-8 transition-all duration-300 last:border-b-0"
+              className="group border-b border-white/10 pb-8 hover:pb-8 transition-all duration-300 last:border-b-0"
             >
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 items-start">
                 {/* Brand */}
@@ -70,7 +74,7 @@ export default function Work() {
                   <p className="text-xs font-light tracking-widest text-gray-500 mb-1">
                     BRAND
                   </p>
-                  <p className="text-sm font-light tracking-wide text-black">
+                  <p className="text-sm font-light tracking-wide text-white">
                     {work.brand}
                   </p>
                 </div>
@@ -80,7 +84,7 @@ export default function Work() {
                   <p className="text-xs font-light tracking-widest text-gray-500 mb-1">
                     PROJECT
                   </p>
-                  <p className="text-sm font-light tracking-wide text-black">
+                  <p className="text-sm font-light tracking-wide text-white">
                     {work.project}
                   </p>
                 </div>
@@ -90,14 +94,14 @@ export default function Work() {
                   <p className="text-xs font-light tracking-widest text-gray-500 mb-1">
                     TYPE
                   </p>
-                  <p className="text-sm font-light tracking-wide text-black">
+                  <p className="text-sm font-light tracking-wide text-white">
                     {work.type}
                   </p>
                 </div>
 
                 {/* Description */}
                 <div className="md:col-span-1">
-                  <p className="text-xs font-light text-gray-600">
+                  <p className="text-xs font-light text-gray-400">
                     {work.description}
                   </p>
                 </div>

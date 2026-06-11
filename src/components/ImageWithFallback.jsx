@@ -5,20 +5,17 @@ export default function ImageWithFallback({ src, alt, className = '', aspect = '
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className={`relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 rounded-sm ${aspect} ${className}`}>
+    <div className={`relative overflow-hidden bg-gradient-to-br from-neutral-900 to-neutral-950 rounded-sm ${aspect} ${className}`}>
       {/* Pulse placeholder state while loading */}
       {!isLoaded && !hasError && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+        <div className="absolute inset-0 bg-neutral-800 animate-pulse" />
       )}
       
       {/* Fallback gradient if error / file not found */}
       {hasError ? (
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 flex flex-col items-center justify-center p-4">
-          <span className="text-[10px] font-light tracking-widest text-black opacity-40 uppercase text-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-950 to-black flex flex-col items-center justify-center p-4">
+          <span className="text-[10px] font-light tracking-widest text-white opacity-60 uppercase text-center">
             {alt || 'Portfolio Image'}
-          </span>
-          <span className="text-[9px] font-extralight tracking-wider text-black opacity-25 mt-1">
-            (Place in public/images/)
           </span>
         </div>
       ) : (
